@@ -46,16 +46,13 @@ const Header = () => {
       {isOpen && (
         <div className="md:hidden bg-white border-t shadow-sm">
           <nav className="flex flex-col space-y-2 p-4">
-            {menuItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
+            <ul className="navbar-nav ms-auto">
+                <Link key="home" to="/" className="text-gray-700 hover:text-blue-600 transition-colors p-5" >Home  </Link>
+                <Link key="about" to="/about" className="text-gray-700 hover:text-blue-600 transition-colors p-5" >About Us  </Link>
+                <Link key="cars" to="/cars" className="text-gray-700 hover:text-blue-600 transition-colors p-5" >Cars  </Link>
+                <Link key="contact" to="/contact" className="text-gray-700 hover:text-blue-600 transition-colors p-5" >Contact Us  </Link>
+                
+            </ul>
           </nav>
         </div>
       )}
