@@ -39,11 +39,10 @@ const matchesLocation =
         //  return matchesBrand && matchesPrice && matchesLocation;
 console.log(selectedseats)
       const matchesSeating =
-    selectedseats === "All"
+    selectedseats === "All" || selectedseats === ""
       ? true
       : Number(car.seating_capacity) === Number(selectedseats);
 console.log(selectedseats)
-      
          
       return matchesBrand && matchesPrice && matchesSeating && matchesLocation;
   });
