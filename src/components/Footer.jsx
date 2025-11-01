@@ -1,58 +1,38 @@
 import React from 'react'
-import { assets } from '../assets/assets'
+import { assets, menuLinks } from "../assets/assets";
+import { Link, Outlet } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <div className='px-6 md:px-16 lg:px-24 xl:px-32 mt-60 text-sm text-gray-500'>
-            <div className='flex flex-wrap justify-between items-start gap-8 pb-6 border-borderColor border-b'>
-                <div>
-                    <img src={assets.logo} alt="logo" className='h-8 md:h-9' />
-                    <p className='max-w-80 mt-3'>
-                        Car Rental service with wide collection of cars for your driving needs.
-                    </p>
-                    <div className='flex items-center gap-3 mt-6'>
-                        <img src={assets.instagram_logo} className='w-5 h-5' alt="" />
-                        <img src={assets.facebook_logo} className='w-5 h-5' alt="" />
-                        <img src={assets.gmail_logo} className='w-5 h-5' alt="" />
+        <footer className="bg-gray-900 text-gray-300 py-10 mt-5">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Logo Section */}
+          <div className="text-2xl font-bold text-white">
+            <a href="/">Car Rentals</a>
+          </div>
 
-                    </div>
-                </div>
-
-                <div>
-                    <h2 className='text-base font-medium text-gray-500 uppercase'>Quick Links</h2>
-                    <ul className='mt-3 flex flex-col gap-1.5'>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Browse Cars</a></li>
-                        <li><a href="#">About Us</a></li>
-
-                    </ul>
-                </div>
-                <div>
-                    <h2 className='text-base font-medium text-gray-500 uppercase'>Resources</h2>
-                    <ul className='mt-3 flex flex-col gap-1.5'>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-
-                    </ul>
-                </div>
-                <div>
-                    <h2 className='text-base font-medium text-gray-500 uppercase'>Contact</h2>
-                    <ul className='mt-3 flex flex-col gap-1.5'>
-                        <li>AM Tower, Car Rental</li>
-                        <li>Edappally, Ernakulam</li>
-                        <li>+91 9897949556</li>
-                        <li>info@carrent@gmail.com</li>
-
-                    </ul>
-                </div>
-            </div>
-
-            <div className='flex flex-col md:flex-row gap-2 items-center justify-between py-5'>
-                <p>© {new Date().getFullYear()} Brand. All rights reserved.</p>
-                
-            </div>
+          {/* Menu Section */}
+          <nav className="flex flex-wrap justify-center gap-6">
+             <ul className="navbar-nav ms-auto">
+                {menuLinks.map((link, index) => (
+                          <Link key={index} to={link.path}  className="text-gray-700 hover:text-blue-600 transition-colors p-5" >
+                            {link.name}
+                          </Link>
+                        ))}
+            </ul>
+          </nav>
         </div>
+
+        {/* Divider */}
+        <div className="border-t border-gray-700 mt-8 mb-4"></div>
+
+        {/* Copyright Section */}
+        <div className="text-center text-sm text-gray-500">
+          © {new Date().getFullYear()} MyCompany. All rights reserved.
+        </div>
+      </div>
+    </footer>
     )
 }
 

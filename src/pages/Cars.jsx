@@ -82,7 +82,14 @@ const matchesLocation =
       </div>
 
       {/* Cars Grid */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+      <div
+  className={
+    filteredCars.length > 0
+      ? "grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+      : "flex items-center gap-6"
+  }
+>
         {filteredCars.length > 0 ? (
           filteredCars.map((car) => (
             <CarCard key={car.id || car._id} car={car} />

@@ -77,7 +77,7 @@ const Navbar = ({ setShowLogin }) => {
                 <span className="font-medium">{loggedInUser.username}</span>
                 <div className="relative">
                   <img
-                    src="/default-profile.png"
+                    src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740&q=80"
                     alt="Profile"
                     className="w-8 h-8 rounded-full cursor-pointer"
                     onClick={(e) => {
@@ -88,15 +88,15 @@ const Navbar = ({ setShowLogin }) => {
 
                   {showMenu && (
                     <div className="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200 z-50">
-                      <button
+                      {/* <button
                         onClick={() => navigate("/profile")}
                         className="bg-stone-600 hover:bg-stone-700 text-white font-semibold py-3 px-6 rounded-full transition"
                       >
                         View Profile
-                      </button>
+                      </button> */}
                       <button
                         onClick={handleLogout}
-                        className="bg-stone-600 hover:bg-stone-700 text-white font-semibold py-3 px-6 rounded-full transition"
+                        className="bg-stone-600 hover:bg-stone-700 text-white font-semibold py-3 px-6 rounded-full transition mt-3 mb-3 ms-2 "
                       >
                         Logout
                       </button>

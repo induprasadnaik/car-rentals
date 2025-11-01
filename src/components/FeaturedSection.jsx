@@ -5,7 +5,7 @@ import CarCard from './CarCard'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-const FaeturedSection = () => {
+const FeaturedSection = () => {
 
     const cars = useSelector((state) => state.cars.cars)
     const featuredCars = cars.slice(0, 4)
@@ -26,12 +26,12 @@ const FaeturedSection = () => {
 
             </div>
 
-            <button onClick={() => { navigate('/cars'); scrollTo(0, 0) }} className='flex items-center justify-center gap-2 px-6 py-2 border border-borderColor hover:bg-gray-400  rounded-md mt-18 cursor-pointer'>
-                Explore all the cars <img src={assets.arrow_icon} alt="arrow" />
+            <button onClick={() => { navigate('/cars'); scrollTo(0, 0) }} className='flex items-center justify-center gap-2 px-6 py-2 border border-borderColor hover:bg-stone-900  rounded-md mt-5 cursor-pointer bg-stone-600 text-white'>
+                View All Cars 
             </button>
 
         </div>
     )
 }
 
-export default FaeturedSection
+export default FeaturedSection

@@ -8,8 +8,8 @@ const CarCard = ({ car }) => {
     <div onClick={()=> {navigate(`/car-details/${car.id}`); scrollTo(0,0)}} className='group rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-500 cursor-pointer'>
       <div className='relative h-49 overflow-hidden'>
         <img src={car.image} alt="Car Image" className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110' />
-        {car.isAvailable && <p className='absolute top-4 left-4 bg-primary/90 text-white text-xs px-2.5 py-1 rounded-full'>Available Now</p>}
-        <div className='absolute top-4 right-4 bg-black/85 backdrop-blur-sm text-white px-3 py-2 rounded-lg'>
+        {car.isAvailable && <p className='absolute top-4 left-4 bg-primary/90 text-black text-xs px-2.5 py-1 rounded-full'>Available Now</p>}
+        <div className='absolute bottom-4 left-4 bg-black backdrop-blur-sm text-white px-3 py-2 rounded-lg'>
           <span className='font-semibold'>₹{car.pricePerDay}</span>
 
           <span className='text-sm text-white/80'> / day</span>
@@ -33,7 +33,9 @@ const CarCard = ({ car }) => {
             <img src={assets.location_icon} alt="" className='h-4 mr-2' />
             <span>{car.location}</span>
           </div>
+          
         </div>
+        <button onclick={()=> {navigate(`/car-details/${car.id}`); scrollTo(0,0)}} className='cursor-pointer bg-stone-600 hover:bg-stone-700 text-white font-semibold py-3 px-6 rounded-full transition mt-3'>Book Now</button>
       </div>
 
     </div>

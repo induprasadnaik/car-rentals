@@ -3,6 +3,8 @@ import Navbar from './components/Navbar';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import CarDetails from './pages/CarDetails';
+import About from './pages/About';
+import Contact from './pages/Contact';
 import Cars from './pages/Cars';
 import Bookings from './pages/MyBookings';
 import Footer from './components/Footer';
@@ -189,6 +191,8 @@ const dummyCarData = [
         <Route path='/bookings' element={<Bookings />} />
         <Route path="/signin" element={<SigninSignup />} />
           <Route path="/mybookings" element={<MyBookings />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
       </Routes>
 
       <Footer />
