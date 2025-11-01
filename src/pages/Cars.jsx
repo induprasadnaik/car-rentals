@@ -11,6 +11,7 @@ const Cars = () => {
   const cars = useSelector((state) => state.cars.cars);
   const [selectedBrand, setSelectedBrand] = useState("All");
   const [selectedPrice, setSelectedPrice] = useState("All");
+  const [selectedseats, setSeat] = useState("All");
 
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -35,7 +36,13 @@ const matchesLocation =
       !pickupLocation ||
       (car.location &&
         car.location.toLowerCase() === pickupLocation.toLowerCase());
-         return matchesBrand && matchesPrice && matchesLocation;
+        //  return matchesBrand && matchesPrice && matchesLocation;
+console.log(selectedseats)
+      const matchesSeating =
+      !selectedseats ||
+      (car.seating_capacity &&
+        car.seating_capacity == selectedseats);
+         return matchesBrand && matchesPrice && matchesSeating && matchesLocation;
   });
 
   return (
@@ -78,6 +85,15 @@ const matchesLocation =
           <option value="low" className='bg-white dark:bg-gray-400'>Below ₹3000</option>
           <option value="mid" className='bg-white dark:bg-gray-400'>₹3000 - ₹6000</option>
           <option value="high" className='bg-white dark:bg-gray-400'>Above ₹6000</option>
+        </select>
+        <select
+          value={selectedseats}
+          onChange={(e) => setSeat(e.target.value)}
+          className="border border-borderColor rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+        >
+          <option value="All" className='bg-white dark:bg-gray-400'>All</option>
+          <option value="5" className='bg-white dark:bg-gray-400'>5 Seater</option>
+          <option value="7" className='bg-white dark:bg-gray-400'>7 Seater</option>
         </select>
       </div>
 

@@ -21,7 +21,7 @@ function MyBookings() {
 
   if (!loggedInUser) {
     return (
-      <div className="text-center mt-20 text-xl font-medium flex justify-center flex-col items-center">
+      <div className="text-center mt-20 text-xl font-medium flex justify-center flex-col items-center  h-screen">
         <h3>Please sign in to view your bookings.</h3>
         <button onClick={() => navigate("/signin")} className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full transition max-w-2xs mt-3" >
                 Sign In
@@ -31,7 +31,7 @@ function MyBookings() {
   }
 
   return (
-    <div className="px-6 md:px-16 lg:px-24 xl:px-32 mt-12">
+    <div className="px-6 md:px-16 lg:px-24 xl:px-32 mt-12 h-screen">
       <h1 className="text-3xl font-bold mb-6">My Bookings</h1>
       {bookings.length === 0 ? (
         <p>No bookings found.</p>
